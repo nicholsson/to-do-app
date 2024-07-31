@@ -7,6 +7,7 @@ module.exports = {
   entry: './src/index.js',
   plugins: [
     new HtmlWebpackPlugin({
+      template: './index.html',
       title: 'Output Management',
     }),
   ],
@@ -28,6 +29,10 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.html$/i,
+        use: ['html-loader'],
       },
     ],
   }
